@@ -1,8 +1,11 @@
 import ProfileImg from "../assets/Profile.png"
+import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
+import CopyEmail from "./CopyEmail";
+import BadgeSocial from "./BadgeSocial"
 
 const Hero = () => {
     return (
-        <section className="">
+        <section id='Home' className="mb-8">
             <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
                 <div className="flex flex-wrap items-center mx-auto max-w-7xl">
                     <div className="flex flex-col items-center mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pt-14 xl:pl-24 xl:pr-24 md:mb-0 xl:mt-0">
@@ -20,6 +23,21 @@ const Hero = () => {
                         </h1>
                         <p className="mb-8 leading-relaxed text-center text-gray-400 text-pretty">I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hesitate to contact me.</p>
                     </div>
+                </div>
+                <div className="flex justify-center gap-2 text-gray-300 ">
+                    <CopyEmail client:load />
+                    <BadgeSocial href="https://www.linkedin.com/in/aybar-javier/" className="">
+                        <span className="hidden sm:block">
+                            Linkedin
+                        </span>
+                        <IconBrandLinkedin width={16} />
+                    </BadgeSocial>
+                    <BadgeSocial href="https://github.com/JavierAybar" className="">
+                        <span className="hidden sm:block">
+                            GitHub
+                        </span>
+                        <IconBrandGithub width={16} />
+                    </BadgeSocial>
                 </div>
             </div>
         </section>
