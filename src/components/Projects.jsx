@@ -65,30 +65,30 @@ const PROJECTS = [
 
 export const Projects = () => {
     return (
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-            <h2 className="mb-16 text-4xl font-bold leading-none tracking-tighter text-center text-white/80 lg:text-4xl">
+        <div id='projects' className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+            <h2 className="mb-12 text-4xl font-bold leading-none tracking-tighter text-center text-white/80 lg:text-4xl">
                 <span ><FontAwesomeIcon icon="fa-solid fa-code" /> </span>
                 Projects
             </h2>
             <div className="grid items-center justify-center gap-24">
                 {PROJECTS.map(({ title, description, tags }) => (
                     <div key={title} className="relative w-full max-w-[740px] shadow-lg group ">
-                        <div className=" absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        <div className=" absolute -inset-0.5 bg-gradient-to-r from-blue-900 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
                         < Card className="relative w-full bg-black shadow-lg ">
                         <CardBody className='pb-0'>
                                 <div className="flex items-center justify-between mb-3 ">
-                                    <Typography variant="h5" className="mb-2 text-2xl font-bold text-blue-500">
+                                    <Typography variant="h5" className="mb-2 text-2xl font-bold text-blue-500 ">
                                         {title}
                                     </Typography>
                                 </div>
-                                <Typography className='text-lg text-gray-400'>
+                                <Typography className='text-gray-400 text-md'>
                                     {description}
                                 </Typography>
                                 <div className="inline-flex flex-wrap items-center gap-3 mt-8 group">
                                     {tags.map((tag) => (
                                         <li key={tag} className='list-none'>
                                             <span
-                                                className={`hover:scale-110  flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                                                className={`hover:scale-110 transition-all flex items-center gap-x-2 rounded-full border border-white/20 text-xs ${tag.class} py-1 px-2 `}
                                             >
                                                 <tag.icon className="size-5" />
                                                 {tag.name}
@@ -99,17 +99,16 @@ export const Projects = () => {
                             </CardBody>
                             <CardHeader floated={false} color="blue-gray">
                                 <img
+                                className="transition duration-500 md:group-hover:scale-105"
                                     src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                                     alt="ui/ux review check"
                                                                   />
                                 <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60" />
                             </CardHeader>
-                            <CardFooter className="flex gap-4 px-4 pt-6 pb-6">
+                            <CardFooter className="flex gap-4 px-4 pt-6 pb-5">
                                 <Button
                                     size="lg"
-                                    variant="gradient"
-                                    color="light-gray"
-                                    className="hover:scale-105 capitalize group relative flex items-center gap-3 overflow-hidden pr-[72px] h-[45px] "
+                                    className="border-white/10 border text-white/80 bg-gray-900/80 hover:bg-gray-900 hover:text-white capitalize group relative flex items-center gap-3 overflow-hidden pr-[72px] h-[45px] "
                                 >
                                     Live version
                                     <span className="absolute right-0 grid w-12 h-full transition-colors place-items-center bg-light-gray-900capitalize">
@@ -118,9 +117,7 @@ export const Projects = () => {
                                 </Button>
                                 <Button
                                     size="lg"
-                                    variant="gradient"
-                                    color="light-gray"
-                                    className="hover:scale-105 capitalize group relative flex items-center gap-3 overflow-hidden pr-[72px] h-[45px]"
+                                    className="border-white/10 border hover:text-white  text-white/80 bg-gray-900/80 hover:bg-gray-900 capitalize group relative flex items-center gap-3 overflow-hidden pr-[72px] h-[45px]"
                                 >
                                     Source code
                                     <span className="absolute right-0 grid w-12 h-full transition-colors place-items-center bg-light-gray-900">
