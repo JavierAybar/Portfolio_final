@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   Navbar,
   Collapse,
-  Typography,
-  Button,
+  // Typography,
+  // Button,
   IconButton,
 } from "@material-tailwind/react";
 
@@ -22,21 +22,21 @@ const NavbarDefault = () => {
   const navList = (
     <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <li>
-        <a href="#" className="text-sm  px-3 py-1  text-gray-300 text-neutral-600 relative before:absolute before:inset-0 before:bg-white/20 before:bg-neutral-400/20 z-[2] before:rounded-full before:scale-0 before:transition-transform before:hover:scale-100 hover:text-white hover:text-neutral-800 transition-colors">
+        <a href="#Home" className="pl-1  text-sm px-3 py-1 text-gray-300 text-neutral-600 relative before:absolute before:inset-0 before:bg-white/20 before:bg-neutral-400/20 z-[2] before:rounded-full before:scale-0 before:transition-transform before:hover:scale-100 hover:text-white hover:text-neutral-800 transition-colors">
+          <FontAwesomeIcon className="mr-2 hover:text-white" color="#808080" icon="fa-solid fa-house" />
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#projects" className="pl-1   text-sm  px-3 py-1  text-gray-300 text-neutral-600 relative before:absolute before:inset-0 before:bg-white/10 before:bg-neutral-400/20 z-[2] before:rounded-full before:scale-0 before:transition-transform before:hover:scale-100 hover:text-white hover:text-neutral-800 transition-colors">
           <FontAwesomeIcon className="mr-2 hover:text-white" color="#808080" icon="fa-solid fa-folder-open" />
           Projects
         </a>
       </li>
       <li>
-        <a href="#" className=" text-sm px-3 py-1 text-gray-300 text-neutral-600 relative before:absolute before:inset-0 before:bg-white/20 before:bg-neutral-400/20 z-[2] before:rounded-full before:scale-0 before:transition-transform before:hover:scale-100 hover:text-white hover:text-neutral-800 transition-colors">
-          <FontAwesomeIcon className="mr-2 hover:text-white" color="#808080" icon="fa-solid fa-user" />
-          About
-        </a>
-      </li>
-      <li>
-        <a href="#" className="text-sm px-3 py-1 text-gray-300 text-neutral-600 relative before:absolute before:inset-0 before:bg-white/20 before:bg-neutral-400/20 z-[2] before:rounded-full before:scale-0 before:transition-transform before:hover:scale-100 hover:text-white hover:text-neutral-800 transition-colors">
-          <FontAwesomeIcon className="mr-2 hover:text-white" color="#808080" icon="fa-solid fa-envelope" />
-          Contact
+        <a href="#Skills" className=" pl-1 text-sm px-3 py-1 text-gray-300 text-neutral-600 relative before:absolute before:inset-0 before:bg-white/20 before:bg-neutral-400/20 z-[2] before:rounded-full before:scale-0 before:transition-transform before:hover:scale-100 hover:text-white hover:text-neutral-800 transition-colors">
+          <FontAwesomeIcon className="mr-2 hover:text-white" color="#808080" icon="fa-solid fa-code" />
+          Skills
         </a>
       </li>
     </ul>
@@ -45,27 +45,13 @@ const NavbarDefault = () => {
 
   return (
     <div className='sticky top-0 z-[1]  pt-6'>
-      <Navbar className=" lg:rounded-full z-[1] w-[90%] px-4  py-1 mx-auto bg-gray-800 border-0 lg:w-fit lg:px-8 lg:py-1">
+      <Navbar className="backdrop-blur-sm lg:rounded-full z-[1] w-[90%] px-4  py-1 mx-auto bg-gray-800 border-0 lg:w-fit lg:px-5 lg:py-1.5">
         <div className="container flex items-center justify-between gap-4 mx-auto text-blue-gray-900">
-          <Typography
-            as="a"
-            href="#"
-            className="text-white font-bold text-xl mr-4 cursor-pointer py-1.5 "
-          >
-            [Javier]
-          </Typography>
+
           <div className="hidden mx-4 lg:block ">{navList}</div>
-          <div className="flex items-center gap-x-4">
-            <Button fullWidth variant="gradient" size="sm" className="hidden bg-gradient-to-tr from-black to-gray-800 font-2xl lg:inline-block hover:scale-110 hover:bg-white/1">
-              <FontAwesomeIcon size="xl" icon="fa-brands fa-github" />
-            </Button>
-            <Button fullWidth variant="gradient" size="sm" className="hidden bg-gradient-to-tr from-black to-gray-800 lg:inline-block hover:scale-110 hover:bg-white/10">
-              <FontAwesomeIcon size="xl" icon="fa-brands fa-linkedin-in" />
-            </Button>
-          </div>
           <IconButton
             variant="text"
-            className="w-6 h-6 ml-autotext-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+            className="w-6 h-6 ml-autotext-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden active:animate-spin-counter-clockwise"
             ripple={false}
             onClick={() => setOpenNav(!openNav)}
           >
@@ -104,16 +90,8 @@ const NavbarDefault = () => {
           </IconButton>
         </div>
         <Collapse open={openNav}>
-          <div className="container mx-auto">
+          <div className="container ml-0 ">
             {navList}
-            <div className="flex items-center justify-center gap-x-3">
-              <Button fullWidth variant="gradient" size="sm" className="bg-gradient-to-tr from-black to-gray-800 w-[40%] font-2xl">
-                <FontAwesomeIcon icon="fa-brands fa-github" />
-              </Button>
-              <Button fullWidth variant="gradient" size="sm" className="bg-gradient-to-tr from-black to-gray-800 w-[40%]">
-                <FontAwesomeIcon icon="fa-brands fa-linkedin-in" />
-              </Button>
-            </div>
           </div>
         </Collapse>
       </Navbar>
@@ -122,5 +100,4 @@ const NavbarDefault = () => {
 }
 
 export default NavbarDefault;
-
 // align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2 px-4 rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] block w-[45%] font-2xl
