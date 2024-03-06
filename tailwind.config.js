@@ -1,4 +1,6 @@
 import withMT from "@material-tailwind/react/utils/withMT";
+import animations from '@midudev/tailwind-animations'
+
 /** @type {import('tailwindcss').Config} */
 export default withMT({
   content: [
@@ -8,6 +10,6 @@ export default withMT({
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [animations],
 });
 
