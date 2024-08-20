@@ -5,6 +5,11 @@ import Redux from "../icons/Redux.jsx"
 import Tailwind from '../icons/Tailwind.jsx';
 import Rails from "../icons/Rails.jsx"
 import Postgresql from "../icons/Postgresql.jsx"
+import VehicleReservation from "../assets/vehicle.png"
+import SpaceProject from "../assets/space.png"
+import GameProject from "../assets/gamegalery.png"
+
+
 
 import {
     Card,
@@ -44,22 +49,31 @@ const TAGS = {
 }
 const PROJECTS = [
     {
-        title: "SVGL - A beautiful library with SVG logos",
+        title: "Vehicle Reservation System",
         description:
-            "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-        tags: [TAGS.REACT, TAGS.REDUX, TAGS.TAILWIND, TAGS.RAILS, TAGS.POSTGRESQL],
+            "Experience streamlined car management and reservations with our React and Rails web app, allowing admins to effortlessly handle inventory while users reserve cars by model, city, and time",
+        tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.RAILS, TAGS.POSTGRESQL],
+        liveLink: "https://vehicle-reservation-system.netlify.app/",
+        sourceCodeLink: "https://github.com/JavierAybar/Full_Stack_Capstone_Back_End",
+        projectImage: VehicleReservation
     },
     {
-        title: "SVGL - A beautiful library with SVG logos",
+        title: "Space Travelers Hub",
         description:
-            "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+            "Single Page Application (SPA) designed to allow users to make rocket reservations, join space missions, and manage their personal profiles. The platform relies on real-time data provided by the SpaceX API, ensuring an up-to-date and thrilling experience for space enthusiasts.",
         tags: [TAGS.REACT, TAGS.REDUX, TAGS.TAILWIND],
+        liveLink: "https://space-x-travelers-1ef804.netlify.app/",
+        sourceCodeLink: "https://github.com/JavierAybar/space-travelers-hub",
+        projectImage: SpaceProject
     },
     {
-        title: "SVGL - A beautiful library with SVG logos",
+        title: "React Games Gallery",
         description:
-            "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+            "Games Gallery is a Single Page Application (SPA) designed for users to explore games by category and view details of their chosen games. We provide an exciting and up-to-date experience for gaming enthusiasts.",
         tags: [TAGS.REDUX],
+        liveLink: "https://react-game-gallery-5dd33.netlify.app/",
+        sourceCodeLink: "https://github.com/JavierAybar/React_Games_Gallery",
+        projectImage: GameProject
     },
 ]
 
@@ -71,13 +85,13 @@ export const Projects = () => {
                 Projects
             </h2>
             <div className="grid items-center justify-center gap-24">
-                {PROJECTS.map(({ title, description, tags }) => (
+                {PROJECTS.map(({ title, description, tags, liveLink, sourceCodeLink, projectImage }) => (
                     <div key={title} className="relative w-full max-w-[740px] shadow-lg group ">
                         <div className=" absolute -inset-0.5 bg-gradient-to-r from-blue-900 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
                         < Card className="relative w-full bg-black shadow-lg ">
-                        <CardBody className='pb-0'>
+                            <CardBody className='pb-0'>
                                 <div className="flex items-center justify-between mb-3 ">
-                                    <Typography variant="h5" className="mb-2 text-2xl font-bold text-blue-500 ">
+                                    <Typography variant="h5" className="mb-2 text-2xl font-bold text-blue-500 transition-all duration-300 hover:text-blue-400 hover:underline hover:scale-105">
                                         {title}
                                     </Typography>
                                 </div>
@@ -99,31 +113,35 @@ export const Projects = () => {
                             </CardBody>
                             <CardHeader floated={false} color="blue-gray">
                                 <img
-                                className="transition duration-500 md:group-hover:scale-105"
-                                    src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                    className="transition duration-500 md:group-hover:scale-105"
+                                    src={projectImage}
                                     alt="ui/ux review check"
-                                                                  />
+                                />
                                 <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60" />
                             </CardHeader>
                             <CardFooter className="flex gap-4 px-4 pt-6 pb-5">
-                                <Button
-                                    size="lg"
-                                    className="border-white/10 border text-white/80 bg-gray-900/80 hover:bg-gray-900 hover:text-white capitalize group relative flex items-center gap-3 overflow-hidden pr-[72px] h-[45px] "
-                                >
-                                    Live version
-                                    <span className="absolute right-0 grid w-12 h-full transition-colors place-items-center bg-light-gray-900capitalize">
-                                        <FontAwesomeIcon className="w-6 h-6" icon="fa-solid fa-up-right-from-square" />
-                                    </span>
-                                </Button>
-                                <Button
-                                    size="lg"
-                                    className="border-white/10 border hover:text-white  text-white/80 bg-gray-900/80 hover:bg-gray-900 capitalize group relative flex items-center gap-3 overflow-hidden pr-[72px] h-[45px]"
-                                >
-                                    Source code
-                                    <span className="absolute right-0 grid w-12 h-full transition-colors place-items-center bg-light-gray-900">
-                                        <FontAwesomeIcon className="h-7 w-7" icon="fa-brands fa-square-github" />
-                                    </span>
-                                </Button>
+                                <a href={liveLink} target="_blank" rel="noopener noreferrer">
+                                    <Button
+                                        size="lg"
+                                        className="border-white/10 border text-white/80 bg-gray-900/50 hover:bg-gray-900 hover:text-white capitalize group relative flex items-center gap-3 overflow-hidden pr-[72px] h-[45px] "
+                                    >
+                                        Live version
+                                        <span className="absolute right-0 grid w-12 h-full transition-colors place-items-center bg-light-gray-900capitalize">
+                                            <FontAwesomeIcon className="w-6 h-6" icon="fa-solid fa-up-right-from-square" />
+                                        </span>
+                                    </Button>
+                                </a>
+                                <a href={sourceCodeLink} target="_blank" rel="noopener noreferrer">
+                                    <Button
+                                        size="lg"
+                                        className="border-white/10 border hover:text-white  text-white/80 bg-gray-900/50 hover:bg-gray-900 capitalize group relative flex items-center gap-3 overflow-hidden pr-[72px] h-[45px]"
+                                    >
+                                        Source code
+                                        <span className="absolute right-0 grid w-12 h-full transition-colors place-items-center bg-light-gray-900">
+                                            <FontAwesomeIcon className="h-7 w-7" icon="fa-brands fa-square-github" />
+                                        </span>
+                                    </Button>
+                                </a>
                             </CardFooter>
                         </Card>
                     </div>
